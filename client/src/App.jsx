@@ -18,43 +18,44 @@ function App() {
     setusuarios(data)
   }
 
-  const updateUser = (user) => {
-    console.log("entro")
-    setisupdate(true)
-    setformdata(user)
-  }
+  // const updateUser = (user) => {
+  //   console.log("entro")
+  //   setisupdate(true)
+  //   setformdata(user)
+  // }
 
-  const deleteUser = (user) => {
-    console.log("entro")
-    const requestOptions = {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' }
-    };
-    fetch(`http://localhost:4000/usuarios/${user.id}`, requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        console.log({ message: "correcto", data })
-        alert("usuario eliminado correctamente")
-        GetUsers()
-      });
-  }
-  const GetUsersByEmail = async (email) => {
-    if (email === "") {
-      GetUsers()
-    }
-    else {
-      console.log("entro")
-      const requestOptions = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-      };
-      fetch(`http://localhost:4000/usuarios/${email}`, requestOptions)
-        .then(response => response.json())
-        .then(data => {
-          setusuarios(data)
-        });
-    }
-  }
+  // const deleteUser = (user) => {
+  //   console.log("entro")
+  //   const requestOptions = {
+  //     method: 'DELETE',
+  //     headers: { 'Content-Type': 'application/json' }
+  //   };
+  //   fetch(`http://localhost:4000/usuarios/${user.id}`, requestOptions)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log({ message: "correcto", data })
+  //       alert("usuario eliminado correctamente")
+  //       GetUsers()
+  //     });
+  // }
+  
+  // const GetUsersByEmail = async (email) => {
+  //   if (email === "") {
+  //     GetUsers()
+  //   }
+  //   else {
+  //     console.log("entro")
+  //     const requestOptions = {
+  //       method: 'GET',
+  //       headers: { 'Content-Type': 'application/json' }
+  //     };
+  //     fetch(`http://localhost:4000/usuarios/${email}`, requestOptions)
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         setusuarios(data)
+  //       });
+  //   }
+  // }
 
   return (
     <>

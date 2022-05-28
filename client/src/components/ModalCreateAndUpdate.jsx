@@ -14,21 +14,21 @@ function ModalCreateAndUpdate({ GetUsers, isupdate, formdata, setformdata, setis
 
     const Submit = (e) => {
         e.preventDefault()
-        if (isupdate) {
-            const requestOptions = {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formdata)
-            };
-            fetch(`http://localhost:4000/usuarios/${formdata.id}`, requestOptions)
-                .then(response => response.json())
-                .then(data => {
-                    console.log({ message: "correcto", data })
-                    alert("usuario Actualizado correctamente")
-                    setform(FormValues)
-                    GetUsers()
-                });
-        }
+        // if (isupdate) {
+        //     const requestOptions = {
+        //         method: 'PUT',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify(formdata)
+        //     };
+        //     fetch(`http://localhost:4000/usuarios/${formdata.id}`, requestOptions)
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             console.log({ message: "correcto", data })
+        //             alert("usuario Actualizado correctamente")
+        //             setform(FormValues)
+        //             GetUsers()
+        //         });
+        // }
         else {
             const requestOptions = {
                 method: 'POST',
@@ -46,15 +46,15 @@ function ModalCreateAndUpdate({ GetUsers, isupdate, formdata, setformdata, setis
         }
     }
 
-    const onFormControlChange = (event) => {
-        const { name, value } = event.target
-        if (isupdate) {
-            setformdata({ ...formdata, [name]: value })
-        }
-        else {
-            setform({ ...form, [name]: value });
-        }
-    }
+    // const onFormControlChange = (event) => {
+    //     const { name, value } = event.target
+    //     if (isupdate) {
+    //         setformdata({ ...formdata, [name]: value })
+    //     }
+    //     else {
+    //         setform({ ...form, [name]: value });
+    //     }
+    // }
 
     return (
         <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
