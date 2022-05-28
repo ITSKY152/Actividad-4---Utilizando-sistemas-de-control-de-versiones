@@ -38,24 +38,24 @@ function App() {
   //       GetUsers()
   //     });
   // }
-  
-  // const GetUsersByEmail = async (email) => {
-  //   if (email === "") {
-  //     GetUsers()
-  //   }
-  //   else {
-  //     console.log("entro")
-  //     const requestOptions = {
-  //       method: 'GET',
-  //       headers: { 'Content-Type': 'application/json' }
-  //     };
-  //     fetch(`http://localhost:4000/usuarios/${email}`, requestOptions)
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         setusuarios(data)
-  //       });
-  //   }
-  // }
+
+  const GetUsersByEmail = async (email) => {
+    if (email === "") {
+      GetUsers()
+    }
+    else {
+      console.log("entro")
+      const requestOptions = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      };
+      fetch(`http://localhost:4000/usuarios/${email}`, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          setusuarios(data)
+        });
+    }
+  }
 
   return (
     <>

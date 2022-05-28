@@ -46,15 +46,15 @@ function ModalCreateAndUpdate({ GetUsers, isupdate, formdata, setformdata, setis
         }
     }
 
-    // const onFormControlChange = (event) => {
-    //     const { name, value } = event.target
-    //     if (isupdate) {
-    //         setformdata({ ...formdata, [name]: value })
-    //     }
-    //     else {
-    //         setform({ ...form, [name]: value });
-    //     }
-    // }
+    const onFormControlChange = (event) => {
+        const { name, value } = event.target
+        if (isupdate) {
+            setformdata({ ...formdata, [name]: value })
+        }
+        else {
+            setform({ ...form, [name]: value });
+        }
+    }
 
     return (
         <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
