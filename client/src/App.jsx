@@ -18,11 +18,11 @@ function App() {
     setusuarios(data)
   }
 
-  // const updateUser = (user) => {
-  //   console.log("entro")
-  //   setisupdate(true)
-  //   setformdata(user)
-  // }
+  const updateUser = (user) => {
+    console.log("entro")
+    setisupdate(true)
+    setformdata(user)
+  }
 
   // const deleteUser = (user) => {
   //   console.log("entro")
@@ -40,21 +40,21 @@ function App() {
   // }
 
   const GetUsersByEmail = async (email) => {
-    // if (email === "") {
-    //   GetUsers()
-    // }
-    // else {
-    //   console.log("entro")
-    //   const requestOptions = {
-    //     method: 'GET',
-    //     headers: { 'Content-Type': 'application/json' }
-    //   };
-    //   fetch(`http://localhost:4000/usuarios/${email}`, requestOptions)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       setusuarios(data)
-    //     });
-    // }
+    if (email === "") {
+      GetUsers()
+    }
+    else {
+      console.log("entro")
+      const requestOptions = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      };
+      fetch(`http://localhost:4000/usuarios/${email}`, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          setusuarios(data)
+        });
+    }
   }
 
   return (
