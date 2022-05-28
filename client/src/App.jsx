@@ -24,20 +24,20 @@ function App() {
     setformdata(user)
   }
 
-  // const deleteUser = (user) => {
-  //   console.log("entro")
-  //   const requestOptions = {
-  //     method: 'DELETE',
-  //     headers: { 'Content-Type': 'application/json' }
-  //   };
-  //   fetch(`http://localhost:4000/usuarios/${user.id}`, requestOptions)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log({ message: "correcto", data })
-  //       alert("usuario eliminado correctamente")
-  //       GetUsers()
-  //     });
-  // }
+  const deleteUser = (user) => {
+    console.log("entro")
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    };
+    fetch(`http://localhost:4000/usuarios/${user.id}`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log({ message: "correcto", data })
+        alert("usuario eliminado correctamente")
+        GetUsers()
+      });
+  }
 
   const GetUsersByEmail = async (email) => {
     if (email === "") {
